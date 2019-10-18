@@ -5,7 +5,7 @@ services:
       image: mailhog/mailhog:latest
       container_name: svq-mailhog
       ports:
-        - "8001:8025"
+        - "${MAILHOG_PORT}:8025"
 
     redis:
       image: redis:alpine
@@ -16,29 +16,29 @@ services:
       container_name: svq-mysql
       working_dir: /application
       volumes:
-        - ../:/application
+        - ${HOST_ROOT}:/application
         - ./svqdocker/mysql/root_pass.sql:/docker-entrypoint-initdb.d/root_pass.sql
       environment:
         - MYSQL_ROOT_PASSWORD=root
       ports:
-        - "8002:3306"
+        - "${MYSQL_PORT}:3306"
 
     webserver:
       image: nginx:alpine
       container_name: svq-webserver
       working_dir: /application
       volumes:
-          - ../:/application
+          - ${HOST_ROOT}:/application
           - ./svqdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
-       - "8000:80"
+       - "${WEBSERVER_PORT}:80"
 
     php-fpm:
       build: svqdocker/php-fpm
       container_name: svq-php-fpm
       working_dir: /application
       volumes:
-        - ../:/application
+        - ${HOST_ROOT}:/application
         - ./svqdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
 
     phpmyadmin:
@@ -50,4 +50,4 @@ services:
       volumes:
         - ./svqdocker/uploads/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       ports:
-        - "8080:80"
+        - "${PHPMYADMIN_PORT}:80"

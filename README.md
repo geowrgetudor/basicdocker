@@ -20,6 +20,9 @@ git clone git@github.com:zippos/basicdocker.git
 
 ## Usage
 
+Copy ```.env.example``` to ```.env```.
+By default the ```HOST_ROOT``` is set to the parent folder but you can set it up however you want.
+
 Run
 ```
 docker-compose up -d
@@ -43,9 +46,9 @@ You can easily stop, remove and rebuild all containers with just one command.
 
 Exposed ports
 ```
-localhost:8000 # webserver
-localhost:8081 # mailhog
-localhost:8080 # phpmyadmin
+localhost:8000 # webserver default
+localhost:8081 # mailhog default
+localhost:8080 # phpmyadmin default
 ```
 
 Hostnames
@@ -66,8 +69,6 @@ Upload size limit
 256M # phpmyadmin
 100M # webserver
 ```
-
-#### Soon and .env file to configure everything from above
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
