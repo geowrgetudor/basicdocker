@@ -12,7 +12,7 @@ Lighweight and simple. Do NOT use this in production.
 
 ## Installation
 
-Clone or download this repository
+Clone or download this repository in your project's root folder
 
 ```bash
 git clone git@github.com:zippos/basicdocker.git
@@ -20,7 +20,10 @@ git clone git@github.com:zippos/basicdocker.git
 
 ## Usage
 
-Copy it's content to your project root directory.
+Run
+```
+docker-compose up -d
+```
 
 **Note:** If your project's ```index.php``` file isn't in the root directory of your project change the ```nginx.conf``` file accordingly.
 
@@ -31,11 +34,6 @@ root /application;
 
 # laravel root path
 root /application/public;
-```
-
-Run
-```
-docker-compose up -d
 ```
 
 You can easily stop, remove and rebuild all containers with just one command.
