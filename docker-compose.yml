@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.7"
 services:
 
     mailhog:
@@ -16,7 +16,7 @@ services:
       container_name: svq-mysql
       working_dir: /application
       volumes:
-        - .:/application
+        - ../:/application
         - ./svqdocker/mysql/root_pass.sql:/docker-entrypoint-initdb.d/root_pass.sql
       environment:
         - MYSQL_ROOT_PASSWORD=root
@@ -28,7 +28,7 @@ services:
       container_name: svq-webserver
       working_dir: /application
       volumes:
-          - .:/application
+          - ../:/application
           - ./svqdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
        - "8000:80"
@@ -38,7 +38,7 @@ services:
       container_name: svq-php-fpm
       working_dir: /application
       volumes:
-        - .:/application
+        - ../:/application
         - ./svqdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
 
     phpmyadmin:
