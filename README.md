@@ -44,6 +44,8 @@ You can easily stop, remove and rebuild all containers with just one command.
 ./docker-rebuild.sh
 ```
 
+**WARNING!** By using ```docker-rebuild.sh``` you will lose all your databases.
+
 Exposed ports
 ```
 localhost:8000 # webserver default
