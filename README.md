@@ -36,12 +36,13 @@ git clone git@github.com:zippos/basicdocker.git
 Copy ```.env.example``` to ```.env```.
 By default the ```HOST_ROOT``` is set to the parent folder but you can set it up however you want.
 
+Copy ```svqdocker/nginx/nginx.example``` to ```svqdocker/nginx/nginx.conf```
+By default, the nginx confg loads your application from the root directory. If you want to change that, edit the ```.conf``` file.
+
 Run
 ```
 docker-compose up -d
 ```
-
-**Note:** If your project's ```index.php``` file isn't in the root directory of your project change the ```nginx.conf``` file accordingly.
 
 Example for Laravel:
 ```
