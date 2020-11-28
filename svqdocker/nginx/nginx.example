@@ -5,8 +5,11 @@ server {
 
     access_log /var/log/nginx/application.access.log;
 
-
+    # Aplication root
+    #
+    # You can change this based on your project type
     root /application;
+
     index index.php;
 
     if (!-e $request_filename) {
