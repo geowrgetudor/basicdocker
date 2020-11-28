@@ -2,6 +2,19 @@
 
 Lighweight and simple. Do NOT use this in production.
 
+## Upgrade
+
+Note: If you were running this before and want to upgrade from PHP 7.3 to PHP 7.4 you will just need to remove the php-fpm container and rebuild it.
+
+```
+docker-compose stop
+docker-compose rm <php_fpm_container_id>
+docker-compose build --no-cache
+docker-compose up -d --force-recreate
+```
+
+## Packages
+
 * PHP 7.4
 * MySql 8.0
 * Nginx
