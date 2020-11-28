@@ -39,7 +39,7 @@ services:
       working_dir: /application
       volumes:
         - ${HOST_ROOT}:/application
-        - ./svqdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+        - ./svqdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
 
     phpmyadmin:
       image: phpmyadmin/phpmyadmin

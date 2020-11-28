@@ -2,7 +2,7 @@
 
 Lighweight and simple. Do NOT use this in production.
 
-* PHP 7.3
+* PHP 7.4
 * MySql 8.0
 * Nginx
 * phpMyAdmin
